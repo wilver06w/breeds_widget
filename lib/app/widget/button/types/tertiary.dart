@@ -2,20 +2,17 @@ part of '../btn.dart';
 
 class _XigoBtnTertiary extends XigoBtnInterface {
   _XigoBtnTertiary({
-    required FontWeight? labelFontWeight,
-    required bool showShadow,
-    required Color labelColor,
+    required super.labelFontWeight,
+    required super.showShadow,
+    required super.labelColor,
   }) : super(
           buttonColor: ProTiendasUiColors.tertiaryColor,
-          labelColor: labelColor,
-          showShadow: showShadow,
-          labelFontWeight: labelFontWeight,
         );
 }
 
 class XigoBtnTertiary extends StatelessWidget {
   const XigoBtnTertiary({
-    Key? key,
+    super.key,
     required this.label,
     required this.onTap,
     this.btnSize = XigoBtnSize.md,
@@ -23,7 +20,7 @@ class XigoBtnTertiary extends StatelessWidget {
     this.showShadow = false,
     this.borderRadius,
     this.labelColor,
-  }) : super(key: key);
+  });
 
   final String label;
   final VoidCallback? onTap;

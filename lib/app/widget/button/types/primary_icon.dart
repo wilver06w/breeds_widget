@@ -26,7 +26,7 @@ class _XigoBtnPrimaryIcon extends XigoBtnInterface {
 
 class XigoBtnPrimaryIcon extends StatelessWidget {
   const XigoBtnPrimaryIcon({
-    Key? key,
+    super.key,
     required this.label,
     required this.onTap,
     this.btnSize = XigoBtnSize.md,
@@ -39,7 +39,7 @@ class XigoBtnPrimaryIcon extends StatelessWidget {
     this.showIconAtRight = true,
     this.showShadow = true,
     this.borderRadius,
-  }) : super(key: key);
+  });
 
   final String label;
   final VoidCallback? onTap;

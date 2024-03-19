@@ -16,13 +16,13 @@ class _XigoBtnGoogleMaps extends XigoBtnInterface {
 
 class XigoBtnGoogleMaps extends StatelessWidget {
   const XigoBtnGoogleMaps({
-    Key? key,
+    super.key,
     required this.label,
     required this.onTap,
     this.btnSize = XigoBtnSize.md,
     this.showShadow = true,
     this.borderRadius,
-  }) : super(key: key);
+  });
 
   final String label;
   final VoidCallback? onTap;

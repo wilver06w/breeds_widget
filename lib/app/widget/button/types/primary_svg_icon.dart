@@ -2,30 +2,26 @@ part of '../btn.dart';
 
 class _XigoBtnPrimarySvgIcon extends XigoBtnInterface {
   _XigoBtnPrimarySvgIcon({
-    required Color labelColor,
-    required FontWeight? labelFontWeight,
+    required super.labelColor,
+    required super.labelFontWeight,
     required XigoIconData icon,
     required double iconSize,
-    required bool showIconAtRight,
-    required bool showShadow,
+    required super.showIconAtRight,
+    required super.showShadow,
     Color? iconColor,
   }) : super(
-          labelColor: labelColor,
-          labelFontWeight: labelFontWeight,
           buttonColor: ProTiendasUiColors.primaryColor,
           showIcon: true,
           svgColor: iconColor,
           iconSvg: icon,
           svgSize: iconSize,
-          showIconAtRight: showIconAtRight,
-          showShadow: showShadow,
           iconIsSvg: true,
         );
 }
 
 class XigoBtnPrimarySvgIcon extends StatelessWidget {
   const XigoBtnPrimarySvgIcon({
-    Key? key,
+    super.key,
     required this.label,
     required this.onTap,
     this.btnSize = XigoBtnSize.md,
@@ -39,7 +35,7 @@ class XigoBtnPrimarySvgIcon extends StatelessWidget {
     this.showShadow = true,
     this.borderRadius,
     this.iconIsSvg = true,
-  }) : super(key: key);
+  });
 
   final String label;
   final VoidCallback? onTap;

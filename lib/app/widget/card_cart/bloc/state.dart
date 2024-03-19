@@ -9,11 +9,11 @@ abstract class CardCartState extends Equatable {
 }
 
 class InitialState extends CardCartState {
-  const InitialState(Model model) : super(model);
+  const InitialState(super.model);
 }
 
 class ChangedQuantityState extends CardCartState {
-  const ChangedQuantityState(Model model) : super(model);
+  const ChangedQuantityState(super.model);
 }
 
 class Model extends Equatable {

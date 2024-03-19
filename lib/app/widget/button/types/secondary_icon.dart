@@ -2,23 +2,16 @@ part of '../btn.dart';
 
 class _XigoBtnSecondaryIcon extends XigoBtnInterface {
   _XigoBtnSecondaryIcon({
-    required Color labelColor,
-    required FontWeight? labelFontWeight,
-    required IconData icon,
-    required Color? iconColor,
-    required double iconMargin,
-    required bool showIconAtRight,
-    required bool showShadow,
+    required super.labelColor,
+    required super.labelFontWeight,
+    required super.icon,
+    required super.iconColor,
+    required super.iconMargin,
+    required super.showIconAtRight,
+    required super.showShadow,
   }) : super(
-          labelColor: labelColor,
-          labelFontWeight: labelFontWeight,
           buttonColor: Colors.transparent,
           showIcon: true,
-          icon: icon,
-          iconColor: iconColor,
-          iconMargin: iconMargin,
-          showIconAtRight: showIconAtRight,
-          showShadow: showShadow,
         );
 }
 

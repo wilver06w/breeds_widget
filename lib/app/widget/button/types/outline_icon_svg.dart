@@ -2,36 +2,26 @@ part of '../btn.dart';
 
 class _XigoBtnOutlineIconSvg extends XigoBtnInterface {
   _XigoBtnOutlineIconSvg({
-    required Color labelColor,
-    required FontWeight? labelFontWeight,
-    required Color borderColor,
-    required Color buttonColor,
-    required String svgUrl,
-    required double iconMargin,
-    required bool showIconAtRight,
-    required String? assetPackage,
-    required Color? svgColor,
-    required double svgSize,
+    required super.labelColor,
+    required super.labelFontWeight,
+    required super.borderColor,
+    required super.buttonColor,
+    required String super.svgUrl,
+    required super.iconMargin,
+    required super.showIconAtRight,
+    required super.assetPackage,
+    required super.svgColor,
+    required super.svgSize,
   }) : super(
-          labelFontWeight: labelFontWeight,
-          labelColor: labelColor,
-          buttonColor: buttonColor,
           hasBorder: true,
           iconIsSvg: true,
           showIcon: true,
-          svgColor: svgColor,
-          borderColor: borderColor,
-          svgUrl: svgUrl,
-          svgSize: svgSize,
-          iconMargin: iconMargin,
-          showIconAtRight: showIconAtRight,
-          assetPackage: assetPackage,
         );
 }
 
 class XigoBtnOutlineIconSvg extends StatelessWidget {
   const XigoBtnOutlineIconSvg({
-    Key? key,
+    super.key,
     required this.label,
     required this.onTap,
     this.btnSize = XigoBtnSize.md,
@@ -46,7 +36,7 @@ class XigoBtnOutlineIconSvg extends StatelessWidget {
     this.svgSize = 16,
     this.borderRadius,
     this.buttonColor = Colors.transparent,
-  }) : super(key: key);
+  });
 
   final String label;
   final VoidCallback? onTap;

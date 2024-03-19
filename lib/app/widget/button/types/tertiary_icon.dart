@@ -24,7 +24,7 @@ class _XigoBtnTertiaryIcon extends XigoBtnInterface {
 
 class XigoBtnTertiaryIcon extends StatelessWidget {
   const XigoBtnTertiaryIcon({
-    Key? key,
+    super.key,
     required this.label,
     required this.onTap,
     this.btnSize = XigoBtnSize.md,
@@ -36,7 +36,7 @@ class XigoBtnTertiaryIcon extends StatelessWidget {
     this.showShadow = true,
     this.iconColor,
     this.borderRadius,
-  }) : super(key: key);
+  });
 
   final String label;
   final VoidCallback? onTap;

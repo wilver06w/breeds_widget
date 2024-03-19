@@ -2,21 +2,18 @@ part of '../btn.dart';
 
 class _XigoBtnOutline extends XigoBtnInterface {
   _XigoBtnOutline({
-    required Color labelColor,
-    required FontWeight? labelFontWeight,
-    required Color borderColor,
+    required super.labelColor,
+    required super.labelFontWeight,
+    required super.borderColor,
   }) : super(
-          labelColor: labelColor,
-          labelFontWeight: labelFontWeight,
           buttonColor: Colors.transparent,
           hasBorder: true,
-          borderColor: borderColor,
         );
 }
 
 class XigoBtnOutline extends StatelessWidget {
   const XigoBtnOutline({
-    Key? key,
+    super.key,
     required this.label,
     required this.onTap,
     this.btnSize = XigoBtnSize.md,
@@ -24,7 +21,7 @@ class XigoBtnOutline extends StatelessWidget {
     this.labelFontWeight,
     this.borderColor,
     this.borderRadius,
-  }) : super(key: key);
+  });
 
   final String label;
   final VoidCallback? onTap;
