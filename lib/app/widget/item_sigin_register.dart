@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:breeds/src/core/utils/constant/colors.dart';
-import 'package:breeds/src/core/utils/constant/spacing.dart';
+import 'package:utils_breeds/utils/constant/colors.dart';
+import 'package:utils_breeds/utils/constant/spacing.dart';
 
 class ItemSigInRegister extends StatelessWidget {
   const ItemSigInRegister({

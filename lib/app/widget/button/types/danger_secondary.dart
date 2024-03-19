@@ -2,26 +2,24 @@ part of '../btn.dart';
 
 class _XigoBtnDangerSecondary extends XigoBtnInterface {
   _XigoBtnDangerSecondary({
-    required FontWeight? labelFontWeight,
-    required Color labelColor,
+    required super.labelFontWeight,
+    required super.labelColor,
   }) : super(
           buttonColor: Colors.transparent,
-          labelColor: labelColor,
           showShadow: false,
-          labelFontWeight: labelFontWeight,
         );
 }
 
 class XigoBtnDangerSecondary extends StatelessWidget {
   const XigoBtnDangerSecondary({
-    Key? key,
+    super.key,
     required this.label,
     required this.onTap,
     this.btnSize = XigoBtnSize.md,
     this.labelColor,
     this.labelFontWeight,
     this.borderRadius,
-  }) : super(key: key);
+  });
 
   final String label;
   final VoidCallback? onTap;

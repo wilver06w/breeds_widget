@@ -2,27 +2,21 @@ part of '../btn.dart';
 
 class _XigoBtnDangerIcon extends XigoBtnInterface {
   _XigoBtnDangerIcon({
-    required Color labelColor,
-    required FontWeight? labelFontWeight,
-    required IconData icon,
-    required double iconMargin,
-    required bool showIconAtRight,
-    required bool showShadow,
+    required super.labelColor,
+    required super.labelFontWeight,
+    required super.icon,
+    required super.iconMargin,
+    required super.showIconAtRight,
+    required super.showShadow,
   }) : super(
-          labelColor: labelColor,
-          labelFontWeight: labelFontWeight,
           buttonColor: ProTiendasUiColors.dangerColor,
           showIcon: true,
-          icon: icon,
-          iconMargin: iconMargin,
-          showIconAtRight: showIconAtRight,
-          showShadow: showShadow,
         );
 }
 
 class XigoBtnDangerIcon extends StatelessWidget {
   const XigoBtnDangerIcon({
-    Key? key,
+    super.key,
     required this.label,
     required this.onTap,
     this.btnSize = XigoBtnSize.sm,
@@ -33,7 +27,7 @@ class XigoBtnDangerIcon extends StatelessWidget {
     this.showIconAtRight = true,
     this.showShadow = true,
     this.borderRadius,
-  }) : super(key: key);
+  });
 
   final String label;
   final VoidCallback? onTap;

@@ -2,20 +2,17 @@ part of '../btn.dart';
 
 class _XigoBtnContrast extends XigoBtnInterface {
   _XigoBtnContrast({
-    required FontWeight? labelFontWeight,
-    required bool showShadow,
-    required Color labelColor,
+    required super.labelFontWeight,
+    required super.showShadow,
+    required super.labelColor,
   }) : super(
           buttonColor: ProTiendasUiColors.contrastColor,
-          labelColor: labelColor,
-          showShadow: showShadow,
-          labelFontWeight: labelFontWeight,
         );
 }
 
 class XigoBtnContrast extends StatelessWidget {
   const XigoBtnContrast({
-    Key? key,
+    super.key,
     required this.label,
     required this.onTap,
     this.btnSize = XigoBtnSize.sm,
@@ -23,7 +20,7 @@ class XigoBtnContrast extends StatelessWidget {
     this.labelFontWeight,
     this.showShadow = false,
     this.borderRadius,
-  }) : super(key: key);
+  });
 
   final String label;
   final VoidCallback? onTap;

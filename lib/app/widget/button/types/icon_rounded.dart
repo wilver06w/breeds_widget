@@ -37,23 +37,16 @@ part of '../btn.dart';
 
 class _XigoBtnIconRounded extends XigoBtnInterface {
   _XigoBtnIconRounded({
-    required bool iconIsSvg,
-    required IconData icon,
-    required String svgUrl,
-    required bool showShadow,
-    required Color iconColor,
-    required Color buttonColor,
-    required double iconSize,
+    required super.iconIsSvg,
+    required super.icon,
+    required String super.svgUrl,
+    required super.showShadow,
+    required Color super.iconColor,
+    required super.buttonColor,
+    required super.iconSize,
   }) : super(
-          buttonColor: buttonColor,
           labelColor: ProTiendasUiColors.primaryColor,
-          showShadow: showShadow,
-          iconIsSvg: iconIsSvg,
-          icon: icon,
           iconMargin: 0,
-          svgUrl: svgUrl,
-          iconSize: iconSize,
-          iconColor: iconColor,
           svgColor: ProTiendasUiColors.black,
           btnBorderRadius: 60.0,
           showIcon: true,
@@ -62,7 +55,7 @@ class _XigoBtnIconRounded extends XigoBtnInterface {
 
 class XigoBtnIconRounded extends StatelessWidget {
   const XigoBtnIconRounded({
-    Key? key,
+    super.key,
     VoidCallback? onPressed,
     Color? backgroundColor,
     this.margin,
@@ -75,8 +68,7 @@ class XigoBtnIconRounded extends StatelessWidget {
     this.showShadow = false,
     this.borderRadius,
   })  : onTap = onPressed,
-        buttonColor = backgroundColor,
-        super(key: key);
+        buttonColor = backgroundColor;
 
   final VoidCallback? onTap;
   final EdgeInsetsGeometry? margin;

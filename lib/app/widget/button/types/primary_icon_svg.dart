@@ -29,7 +29,7 @@ class _XigoBtnPrimaryIconSvg extends XigoBtnInterface {
 
 class XigoBtnPrimaryIconSvg extends StatelessWidget {
   const XigoBtnPrimaryIconSvg({
-    Key? key,
+    super.key,
     required this.label,
     required this.onTap,
     required this.svgUrl,
@@ -44,7 +44,7 @@ class XigoBtnPrimaryIconSvg extends StatelessWidget {
     this.svgSize = 16,
     this.svgUrlDisabled,
     this.whiteLetters = false,
-  }) : super(key: key);
+  });
 
   final BorderRadiusGeometry? borderRadius;
   final BtnSize btnSize;

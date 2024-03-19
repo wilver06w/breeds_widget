@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
-import 'package:breeds/src/core/utils/constant/colors.dart';
-import 'package:breeds/src/core/utils/constant/navigation.dart';
-import 'package:breeds/src/core/utils/constant/spacing.dart';
-import 'package:breeds/src/core/utils/helpers/text/text.dart';
-import 'package:breeds/src/core/utils/constant/protienda_ui.dart';
+import 'package:utils_breeds/utils/constant/colors.dart';
+import 'package:utils_breeds/utils/constant/navigation.dart';
+import 'package:utils_breeds/utils/constant/spacing.dart';
+import 'package:utils_breeds/utils/helpers/text/text.dart';
+import 'package:l10n_breeds/app/breeds_ui.dart';
 
 class AppBarGlobal extends StatelessWidget implements PreferredSizeWidget {
   const AppBarGlobal({
@@ -50,7 +50,7 @@ class AppBarGlobal extends StatelessWidget implements PreferredSizeWidget {
                 ),
                 padding: const EdgeInsets.all(ProTiendaSpacing.sl),
                 child: XigoTextMedium(
-                  ProTiendasUiValues.searchProtiendas,
+                  BreedUiValues.searchProtiendas,
                 ))
             : XigoTextLarge(
                 title,
@@ -65,7 +65,7 @@ class AppBarGlobal extends StatelessWidget implements PreferredSizeWidget {
               ProTiendasRoute.navCart();
             },
             child: SvgPicture.asset(
-              ProTiendasUiValues.icCart,
+              BreedUiValues.icCart,
             ),
           ),
           const Gap(ProTiendaSpacing.md),

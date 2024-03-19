@@ -1,6 +1,6 @@
+import 'package:breeds_widget/app/widget/button/icons/icons_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:breeds/src/shared/widget/button/icons/icons_data.dart';
 
 class XigoSvgIcon extends StatelessWidget {
   const XigoSvgIcon(
@@ -11,8 +11,8 @@ class XigoSvgIcon extends StatelessWidget {
     this.fit,
     this.alignment = Alignment.center,
     this.colorBlendMode,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final XigoIconData icon;
   final double? width;

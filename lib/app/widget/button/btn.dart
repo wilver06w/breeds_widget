@@ -1,11 +1,11 @@
+import 'package:breeds_widget/app/widget/button/icons/icons.dart';
+import 'package:breeds_widget/app/widget/button/icons/icons_data.dart';
+import 'package:breeds_widget/app/widget/button/icons/svg.dart';
 import 'package:flutter/material.dart';
-import 'package:breeds/src/shared/widget/button/icons/icons.dart';
-import 'package:breeds/src/shared/widget/button/icons/icons_data.dart';
-import 'package:breeds/src/shared/widget/button/icons/svg.dart';
-import 'package:breeds/src/core/utils/constant/colors.dart';
-import 'package:breeds/src/core/utils/constant/responsive.dart';
-import 'package:breeds/src/core/utils/constant/spacing.dart';
-import 'package:breeds/src/core/utils/helpers/text/text.dart';
+import 'package:utils_breeds/utils/constant/colors.dart';
+import 'package:utils_breeds/utils/constant/responsive.dart';
+import 'package:utils_breeds/utils/constant/spacing.dart';
+import 'package:utils_breeds/utils/helpers/text/text.dart';
 
 part 'types/contrast.dart';
 part 'types/contrast_icon.dart';
@@ -179,7 +179,7 @@ class XigoBtnInterface {
 //TODo - Refactor XigoBtn, just use directly the needed buttons
 class XigoBtn extends StatelessWidget {
   const XigoBtn({
-    Key? key,
+    super.key,
     required this.label,
     required this.onTap,
     this.border = false,
@@ -204,7 +204,7 @@ class XigoBtn extends StatelessWidget {
     this.sizeIcon = 16,
     this.sizeImg = 25,
     this.svgUrlDisabled,
-  }) : super(key: key);
+  });
 
   final BorderRadiusGeometry? borderRadius;
   final BtnSize? btnSize;
@@ -268,7 +268,6 @@ class XigoBtn extends StatelessWidget {
 
 class _XigoBtnGeneric extends StatelessWidget {
   const _XigoBtnGeneric({
-    Key? key,
     required this.btnSize,
     required this.btnType,
     required this.label,
@@ -277,7 +276,7 @@ class _XigoBtnGeneric extends StatelessWidget {
     this.grayLetters = false,
     this.transparentColorDisabledButton = false,
     this.whiteLetters = false,
-  }) : super(key: key);
+  });
 
   final BorderRadiusGeometry? borderRadius;
   final BtnSize btnSize;

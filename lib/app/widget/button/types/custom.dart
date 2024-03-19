@@ -2,21 +2,16 @@ part of '../btn.dart';
 
 class _XigoBtnCustom extends XigoBtnInterface {
   _XigoBtnCustom({
-    required FontWeight? labelFontWeight,
-    required bool showShadow,
-    required Color labelColor,
-    required Color buttonColor,
-  }) : super(
-          buttonColor: buttonColor,
-          labelColor: labelColor,
-          showShadow: showShadow,
-          labelFontWeight: labelFontWeight,
-        );
+    required super.labelFontWeight,
+    required super.showShadow,
+    required super.labelColor,
+    required super.buttonColor,
+  });
 }
 
 class XigoBtnCustom extends StatelessWidget {
   const XigoBtnCustom({
-    Key? key,
+    super.key,
     required this.label,
     required this.onTap,
     this.btnSize = XigoBtnSize.mdLittlePadding,
@@ -25,7 +20,7 @@ class XigoBtnCustom extends StatelessWidget {
     this.borderRadius,
     this.labelColor,
     this.buttonColor,
-  }) : super(key: key);
+  });
 
   final String label;
   final VoidCallback? onTap;

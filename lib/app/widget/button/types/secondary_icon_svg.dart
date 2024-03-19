@@ -2,34 +2,25 @@ part of '../btn.dart';
 
 class _XigoBtnSecondaryIconSvg extends XigoBtnInterface {
   _XigoBtnSecondaryIconSvg({
-    required Color labelColor,
-    required Color? svgColor,
-    required FontWeight? labelFontWeight,
-    required String svgUrl,
-    required String? assetPackage,
-    required bool showIconAtRight,
-    required double iconMargin,
-    required double svgSize,
-    String? svgUrlDisabled,
+    required super.labelColor,
+    required super.svgColor,
+    required super.labelFontWeight,
+    required String super.svgUrl,
+    required super.assetPackage,
+    required super.showIconAtRight,
+    required super.iconMargin,
+    required super.svgSize,
+    super.svgUrlDisabled,
   }) : super(
-          assetPackage: assetPackage,
           buttonColor: Colors.transparent,
           iconIsSvg: true,
-          iconMargin: iconMargin,
-          labelColor: labelColor,
-          labelFontWeight: labelFontWeight,
-          svgUrlDisabled: svgUrlDisabled,
           showIcon: true,
-          showIconAtRight: showIconAtRight,
-          svgColor: svgColor,
-          svgSize: svgSize,
-          svgUrl: svgUrl,
         );
 }
 
 class XigoBtnSecondaryIconSvg extends StatelessWidget {
   const XigoBtnSecondaryIconSvg({
-    Key? key,
+    super.key,
     required this.label,
     required this.onTap,
     required this.svgUrl,
@@ -45,7 +36,7 @@ class XigoBtnSecondaryIconSvg extends StatelessWidget {
     this.svgColor,
     this.svgSize = 16,
     this.transparentColorDisabledButton = false,
-  }) : super(key: key);
+  });
 
   final BorderRadiusGeometry? borderRadius;
   final BtnSize btnSize;

@@ -1,15 +1,15 @@
+import 'package:breeds_widget/app/widget/card_favorite/bloc/bloc.dart';
+import 'package:breeds_widget/app/widget/imagen_widget.dart';
+import 'package:breeds_widget/app/widget/item_description.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
 
-import 'package:breeds/src/core/utils/constant/colors.dart';
-import 'package:breeds/src/core/utils/constant/spacing.dart';
-import 'package:breeds/src/core/utils/helpers/text/text.dart';
-import 'package:breeds/src/core/utils/constant/protienda_ui.dart';
-import 'package:breeds/src/shared/widget/card_favorite/bloc/bloc.dart';
-import 'package:breeds/src/shared/widget/imagen_widget.dart';
-import 'package:breeds/src/shared/widget/item_description.dart';
+import 'package:utils_breeds/utils/constant/colors.dart';
+import 'package:utils_breeds/utils/constant/spacing.dart';
+import 'package:utils_breeds/utils/helpers/text/text.dart';
+import 'package:l10n_breeds/app/breeds_ui.dart';
 
 class CardProductCart extends StatelessWidget {
   const CardProductCart({
@@ -153,7 +153,7 @@ class CardProductCart extends StatelessWidget {
               InkWell(
                 onTap: () {},
                 child: SvgPicture.asset(
-                  ProTiendasUiValues.icDelete,
+                  BreedUiValues.icDelete,
                   height: 20,
                   width: 20,
                 ),

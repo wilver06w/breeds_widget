@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:breeds/src/core/utils/constant/protienda_ui.dart';
-import 'package:breeds/src/core/utils/constant/spacing.dart';
+import 'package:l10n_breeds/app/breeds_ui.dart';
+import 'package:utils_breeds/utils/constant/spacing.dart';
 
 class ViewBanner extends StatelessWidget {
   const ViewBanner({
@@ -32,7 +32,7 @@ class ViewBanner extends StatelessWidget {
               ),
               child: Image.asset(
                 // item,
-                ProTiendasUiValues.bannerTest,
+                BreedUiValues.bannerTest,
                 fit: BoxFit.contain,
                 height: double.infinity,
                 width: double.infinity,
