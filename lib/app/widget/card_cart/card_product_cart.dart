@@ -8,8 +8,8 @@ import 'package:gap/gap.dart';
 
 import 'package:utils_breeds/utils/constant/colors.dart';
 import 'package:utils_breeds/utils/constant/spacing.dart';
-import 'package:utils_breeds/utils/helpers/text/text.dart';
 import 'package:l10n_breeds/app/breeds_ui.dart';
+import 'package:utils_breeds/utils/helpers/text/xigo_text.dart';
 
 class CardProductCart extends StatelessWidget {
   const CardProductCart({
@@ -55,7 +55,7 @@ class CardProductCart extends StatelessWidget {
               ),
             ],
           ),
-          padding: const EdgeInsets.all(ProTiendaSpacing.md),
+          padding: const EdgeInsets.all(BreedSpacing.md),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -80,7 +80,7 @@ class CardProductCart extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const Gap(ProTiendaSpacing.sl),
+                  const Gap(BreedSpacing.sl),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -91,13 +91,13 @@ class CardProductCart extends StatelessWidget {
                         color: ProTiendasUiColors.primaryColor,
                         weight: FontWeight.w600,
                       ),
-                      const Gap(ProTiendaSpacing.sm),
+                      const Gap(BreedSpacing.sm),
                       XigoTextMedium(
                         price,
                         color: ProTiendasUiColors.primaryColor,
                         weight: FontWeight.w500,
                       ),
-                      const Gap(ProTiendaSpacing.sm),
+                      const Gap(BreedSpacing.sm),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -105,45 +105,7 @@ class CardProductCart extends StatelessWidget {
                             title: titleFeatures,
                             description: descriptionFeature,
                           ),
-                          const Gap(ProTiendaSpacing.xl),
-                          Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                              border: Border.all(
-                                color: ProTiendasUiColors.lightSilver,
-                                width: 1,
-                              ),
-                            ),
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: ProTiendaSpacing.sl,
-                            ),
-                            child: BlocBuilder<BlocCardFavorite,
-                                CardFavoriteState>(
-                              builder: (context, state) {
-                                return DropdownButton<int>(
-                                  value: state.model.quantity,
-                                  items: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-                                      .map(
-                                        (item) => DropdownMenuItem(
-                                          value: item,
-                                          child: XigoTextMedium(
-                                            '$item',
-                                            weight: FontWeight.w500,
-                                          ),
-                                        ),
-                                      )
-                                      .toList(),
-                                  onChanged: (value) {
-                                    context.read<BlocCardFavorite>().add(
-                                          OnChangeQuantityEvent(
-                                            quantity: value ?? 1,
-                                          ),
-                                        );
-                                  },
-                                );
-                              },
-                            ),
-                          ),
+                          const Gap(BreedSpacing.xl),
                         ],
                       ),
                     ],

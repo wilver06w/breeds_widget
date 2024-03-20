@@ -8,8 +8,8 @@ import 'package:utils_breeds/utils/constant/spacing.dart';
 ///
 ///Este widget se usa en la pantalla de [BreedDetailScreen]
 ///para representar la calificación de la raza.
-class StartItem extends StatelessWidget {
-  const StartItem({
+class StarItem extends StatelessWidget {
+  const StarItem({
     super.key,
     required this.qualification,
   });
@@ -24,7 +24,7 @@ class StartItem extends StatelessWidget {
           5,
           (index) => Container(
             padding: const EdgeInsets.symmetric(
-              horizontal: ProTiendaSpacing.xxs,
+              horizontal: BreedSpacing.xxs,
             ),
             child: index > qualification - 1
                 ? SvgPicture.asset(

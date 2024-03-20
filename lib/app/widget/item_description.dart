@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
 import 'package:utils_breeds/utils/constant/colors.dart';
 import 'package:utils_breeds/utils/constant/spacing.dart';
-import 'package:utils_breeds/utils/helpers/text/text.dart';
+import 'package:utils_breeds/utils/helpers/text/xigo_text.dart';
 
 class ItemDescription extends StatelessWidget {
   const ItemDescription({
@@ -23,7 +23,7 @@ class ItemDescription extends StatelessWidget {
           title,
           color: ProTiendasUiColors.black,
         ),
-        const Gap(ProTiendaSpacing.xs),
+        const Gap(BreedSpacing.xs),
         Flexible(
           child: XigoTextMedium(
             description,

@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:l10n_breeds/app/breeds_ui.dart';
 import 'package:utils_breeds/utils/constant/colors.dart';
 import 'package:utils_breeds/utils/constant/navigation.dart';
 import 'package:utils_breeds/utils/constant/spacing.dart';
-import 'package:utils_breeds/utils/helpers/text/text.dart';
+import 'package:utils_breeds/utils/helpers/text/xigo_text.dart';
 
 class AppBarGlobal extends StatelessWidget implements PreferredSizeWidget {
   const AppBarGlobal({
@@ -19,38 +18,33 @@ class AppBarGlobal extends StatelessWidget implements PreferredSizeWidget {
     this.title = '',
     this.havCart = true,
     this.havIconLeft = true,
+    this.onChanged,
+    this.textEditingController,
+    this.widgetSearch,
+    this.havHeart = false,
+    this.widgetHeart = const SizedBox.shrink(),
   });
 
   final Widget icon;
   final VoidCallback? onTapIcon;
   final bool haveSearch;
   final String title;
+  final Widget? widgetSearch;
   final bool havCart;
+  final bool havHeart;
+  final Widget widgetHeart;
   final bool havIconLeft;
+  final Function(String)? onChanged;
+  final TextEditingController? textEditingController;
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      toolbarHeight: 65,
+      toolbarHeight: 100,
       backgroundColor: ProTiendasUiColors.primaryColor,
       title: Center(
         child: haveSearch
-            ? Container(
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30),
-                  color: Colors.white,
-                  border: const Border(
-                    left: BorderSide(
-                      color: ProTiendasUiColors.secondaryColor,
-                      width: 3,
-                    ),
-                  ),
-                ),
-                padding: const EdgeInsets.all(ProTiendaSpacing.sl),
-                child: XigoTextMedium(
-                  BreedUiValues.searchCatbreeds,
-                ))
+            ? widgetSearch
             : XigoTextLarge(
                 title,
                 color: ProTiendasUiColors.white,
@@ -68,8 +62,9 @@ class AppBarGlobal extends StatelessWidget implements PreferredSizeWidget {
               color: ProTiendasUiColors.secondaryColor,
             ),
           ),
-          const Gap(ProTiendaSpacing.md),
-        ]
+          const Gap(BreedSpacing.md),
+        ],
+        if (havHeart) ...[widgetHeart],
       ],
       leading: havIconLeft
           ? InkWell(

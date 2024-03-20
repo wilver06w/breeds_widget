@@ -1,33 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:l10n_breeds/app/breeds_ui.dart';
-import 'package:utils_breeds/utils/config/client_config.dart';
 import 'package:utils_breeds/utils/constant/spacing.dart';
-import 'package:utils_breeds/utils/helpers/text/text.dart';
+import 'package:utils_breeds/utils/helpers/text/xigo_text.dart';
 
 class BodyFooter extends StatelessWidget {
   const BodyFooter({
     super.key,
-    required this.app,
+    required this.version,
   });
 
-  final AppConfig app;
+  final String version;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       color: Colors.white,
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: ProTiendaSpacing.md),
+        padding: const EdgeInsets.symmetric(vertical: BreedSpacing.md),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            XigoText.labelText(
-              label: BreedUiValues.textFooter,
-              textStyle: GoogleFonts.lato(),
+            XigoTextLarge(
+              BreedUiValues.textFooter,
+              fontStyle: GoogleFonts.lato().fontStyle,
             ),
-            XigoText.xSmall(
-              label: '${BreedUiValues.version} ${app.version}',
+            XigoTextSmall(
+              '${BreedUiValues.version} $version',
             ),
           ],
         ),

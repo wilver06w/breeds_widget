@@ -9,11 +9,11 @@ abstract class CardFavoriteState extends Equatable {
 }
 
 class InitialState extends CardFavoriteState {
-  const InitialState(Model model) : super(model);
+  const InitialState(super.model);
 }
 
 class ChangedQuantityState extends CardFavoriteState {
-  const ChangedQuantityState(Model model) : super(model);
+  const ChangedQuantityState(super.model);
 }
 
 class Model extends Equatable {

@@ -7,8 +7,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
 import 'package:utils_breeds/utils/constant/colors.dart';
 import 'package:utils_breeds/utils/constant/spacing.dart';
-import 'package:utils_breeds/utils/helpers/text/text.dart';
 import 'package:l10n_breeds/app/breeds_ui.dart';
+import 'package:utils_breeds/utils/helpers/text/xigo_text.dart';
 
 class CardProductFavorite extends StatelessWidget {
   const CardProductFavorite({
@@ -46,7 +46,7 @@ class CardProductFavorite extends StatelessWidget {
           decoration: const BoxDecoration(
             color: Colors.white,
           ),
-          padding: const EdgeInsets.all(ProTiendaSpacing.md),
+          padding: const EdgeInsets.all(BreedSpacing.md),
           child: Column(
             children: [
               Row(
@@ -73,7 +73,7 @@ class CardProductFavorite extends StatelessWidget {
                           ),
                         ),
                       ),
-                      const Gap(ProTiendaSpacing.sl),
+                      const Gap(BreedSpacing.sl),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -84,13 +84,13 @@ class CardProductFavorite extends StatelessWidget {
                             color: ProTiendasUiColors.primaryColor,
                             weight: FontWeight.w600,
                           ),
-                          const Gap(ProTiendaSpacing.sm),
+                          const Gap(BreedSpacing.sm),
                           XigoTextMedium(
                             price,
                             color: ProTiendasUiColors.primaryColor,
                             weight: FontWeight.w500,
                           ),
-                          const Gap(ProTiendaSpacing.md),
+                          const Gap(BreedSpacing.md),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
@@ -98,7 +98,7 @@ class CardProductFavorite extends StatelessWidget {
                                 title: titleFeatures,
                                 description: descriptionFeature,
                               ),
-                              const Gap(ProTiendaSpacing.xl),
+                              const Gap(BreedSpacing.xl),
                               Container(
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(20),
@@ -108,7 +108,7 @@ class CardProductFavorite extends StatelessWidget {
                                   ),
                                 ),
                                 padding: const EdgeInsets.symmetric(
-                                  horizontal: ProTiendaSpacing.sl,
+                                  horizontal: BreedSpacing.sl,
                                 ),
                                 child: BlocBuilder<BlocCardFavorite,
                                     CardFavoriteState>(
@@ -153,7 +153,7 @@ class CardProductFavorite extends StatelessWidget {
                   ),
                 ],
               ),
-              const Gap(ProTiendaSpacing.md),
+              const Gap(BreedSpacing.md),
               const Divider(
                 thickness: 0.5,
                 color: ProTiendasUiColors.silverFoil,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:utils_breeds/utils/constant/colors.dart';
-import 'package:utils_breeds/utils/helpers/text/text.dart';
+import 'package:utils_breeds/utils/helpers/text/xigo_text.dart';
 
 class TitleSections extends StatelessWidget {
   const TitleSections({
