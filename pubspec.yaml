@@ -22,6 +22,8 @@ dependencies:
     path: ../l10n_breeds
   utils_breeds:
     path: ../utils_breeds
+  models_breeds:
+    path: ../models_breeds
   # l10n_breeds:
   #   git:
   #     url: https://github.com/wilver06w/l10n_breeds.git
@@ -29,6 +31,10 @@ dependencies:
   # utils_breeds:
   #   git:
   #     url: https://github.com/wilver06w/utils_breeds.git
+  #     ref: main
+  # models_breeds:
+  #   git:
+  #     url: https://github.com/wilver06w/models_breeds.git
   #     ref: main
 
 dev_dependencies:

@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:l10n_breeds/app/breeds_ui.dart';
 import 'package:utils_breeds/utils/constant/spacing.dart';
+import 'package:models_breeds/app/models/breed.dart';
 
 class ViewBanner extends StatelessWidget {
   const ViewBanner({
@@ -11,7 +12,7 @@ class ViewBanner extends StatelessWidget {
   });
 
   final Size size;
-  final List<String> mobile;
+  final List<Breed> mobile;
 
   @override
   Widget build(BuildContext context) {
@@ -31,8 +32,9 @@ class ViewBanner extends StatelessWidget {
                 right: ProTiendaSpacing.md,
               ),
               child: Image.asset(
-                // item,
-                BreedUiValues.bannerTest,
+                BreedUiValues.imageUrlConcatec(
+                  item.referenceImageId ?? '',
+                ),
                 fit: BoxFit.contain,
                 height: double.infinity,
                 width: double.infinity,

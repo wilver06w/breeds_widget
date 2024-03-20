@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
 import 'package:utils_breeds/utils/constant/colors.dart';
 import 'package:utils_breeds/utils/constant/spacing.dart';
@@ -23,10 +24,13 @@ class ItemDescription extends StatelessWidget {
           color: ProTiendasUiColors.black,
         ),
         const Gap(ProTiendaSpacing.xs),
-        XigoTextMedium(
-          description,
-          color: ProTiendasUiColors.black,
-          weight: FontWeight.bold,
+        Flexible(
+          child: XigoTextMedium(
+            description,
+            color: ProTiendasUiColors.black,
+            weight: FontWeight.bold,
+            textOverflow: TextOverflow.ellipsis,
+          ),
         ),
       ],
     );
