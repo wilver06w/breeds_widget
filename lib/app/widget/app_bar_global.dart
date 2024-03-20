@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
+import 'package:l10n_breeds/app/breeds_ui.dart';
 import 'package:utils_breeds/utils/constant/colors.dart';
 import 'package:utils_breeds/utils/constant/navigation.dart';
 import 'package:utils_breeds/utils/constant/spacing.dart';
 import 'package:utils_breeds/utils/helpers/text/text.dart';
-import 'package:l10n_breeds/app/breeds_ui.dart';
 
 class AppBarGlobal extends StatelessWidget implements PreferredSizeWidget {
   const AppBarGlobal({
@@ -50,7 +49,7 @@ class AppBarGlobal extends StatelessWidget implements PreferredSizeWidget {
                 ),
                 padding: const EdgeInsets.all(ProTiendaSpacing.sl),
                 child: XigoTextMedium(
-                  BreedUiValues.searchProtiendas,
+                  BreedUiValues.searchCatbreeds,
                 ))
             : XigoTextLarge(
                 title,
@@ -64,8 +63,9 @@ class AppBarGlobal extends StatelessWidget implements PreferredSizeWidget {
             onTap: () {
               ProTiendasRoute.navCart();
             },
-            child: SvgPicture.asset(
-              BreedUiValues.icCart,
+            child: const Icon(
+              Icons.favorite_border,
+              color: ProTiendasUiColors.secondaryColor,
             ),
           ),
           const Gap(ProTiendaSpacing.md),
