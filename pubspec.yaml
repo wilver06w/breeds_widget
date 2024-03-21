@@ -18,6 +18,8 @@ dependencies:
   equatable: ^2.0.5
   gap: ^3.0.1
   google_fonts: ^6.1.0
+  internet_connection_checker: ^1.0.0+1
+  connectivity_plus: ^2.3.9
   # l10n_breeds:
   #   path: ../l10n_breeds
   # utils_breeds:
