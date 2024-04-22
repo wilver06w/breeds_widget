@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:async';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:l10n_breeds/app/breeds_ui.dart';
@@ -17,19 +18,21 @@ class InternetConnectionWidget extends StatefulWidget {
 
 class _InternetConnectionWidgetState extends State<InternetConnectionWidget> {
   bool isDeviceConnected = true;
+  StreamController<bool> streamController = StreamController<bool>();
 
   @override
   void initState() {
+    streamController.add(isDeviceConnected);
     Connectivity()
         .onConnectivityChanged
         .listen((ConnectivityResult result) async {
-      InternetConnectionChecker().hasConnection.then((value) => setState(() {
-            isDeviceConnected = value;
-          }));
+      InternetConnectionChecker()
+          .hasConnection
+          .then((value) => streamController.add(value));
     });
-    InternetConnectionChecker().hasConnection.then((value) => setState(() {
-          isDeviceConnected = value;
-        }));
+    InternetConnectionChecker()
+        .hasConnection
+        .then((value) => streamController.add(value));
     super.initState();
   }
 
@@ -38,19 +41,24 @@ class _InternetConnectionWidgetState extends State<InternetConnectionWidget> {
     return Stack(
       children: [
         widget.child,
-        Visibility(
-          visible: !isDeviceConnected,
-          child: SafeArea(
-            child: Container(
-              alignment: Alignment.center,
-              width: double.maxFinite,
-              color: ProTiendasUiColors.aeroBlue,
-              height: !isDeviceConnected ? 16.0 : 0.0,
-              child: XigoTextMedium(
-                BreedUiValues.noConection,
+        StreamBuilder<bool>(
+          stream: streamController.stream,
+          builder: (context, snapshot) {
+            return Visibility(
+              visible: !isDeviceConnected,
+              child: SafeArea(
+                child: Container(
+                  alignment: Alignment.center,
+                  width: double.maxFinite,
+                  color: ProTiendasUiColors.aeroBlue,
+                  height: !isDeviceConnected ? 16.0 : 0.0,
+                  child: XigoTextMedium(
+                    BreedUiValues.noConection,
+                  ),
+                ),
               ),
-            ),
-          ),
+            );
+          }
         ),
       ],
     );
