@@ -1,15 +1,21 @@
-import 'package:flutter/material.dart';
 import 'dart:async';
-import 'package:internet_connection_checker/internet_connection_checker.dart';
+import 'dart:developer';
+
 import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:l10n_breeds/app/breeds_ui.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:utils_breeds/utils/constant/colors.dart';
 import 'package:utils_breeds/utils/helpers/text/xigo_text.dart';
 
 class InternetConnectionWidget extends StatefulWidget {
   final Widget child;
+  final String text;
 
-  const InternetConnectionWidget({super.key, required this.child});
+  const InternetConnectionWidget({
+    super.key,
+    required this.child,
+    required this.text,
+  });
 
   @override
   State<InternetConnectionWidget> createState() =>
@@ -17,23 +23,52 @@ class InternetConnectionWidget extends StatefulWidget {
 }
 
 class _InternetConnectionWidgetState extends State<InternetConnectionWidget> {
-  bool isDeviceConnected = true;
-  StreamController<bool> streamController = StreamController<bool>();
+  final ValueNotifier<bool> _valueIsDevice = ValueNotifier<bool>(true);
+  final Connectivity _connectivity = Connectivity();
+  late StreamSubscription<List<ConnectivityResult>> _connectivitySubscription;
 
   @override
   void initState() {
-    streamController.add(isDeviceConnected);
-    Connectivity()
-        .onConnectivityChanged
-        .listen((ConnectivityResult result) async {
-      InternetConnectionChecker()
-          .hasConnection
-          .then((value) => streamController.add(value));
-    });
-    InternetConnectionChecker()
-        .hasConnection
-        .then((value) => streamController.add(value));
+    initConnectivity();
+
+    _connectivitySubscription =
+        _connectivity.onConnectivityChanged.listen(_updateConnectionStatus);
+
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    _connectivitySubscription.cancel();
+
+    super.dispose();
+  }
+
+// Platform messages are asynchronous, so we initialize in an async method.
+  Future<void> initConnectivity() async {
+    late List<ConnectivityResult> result;
+    // Platform messages may fail, so we use a try/catch PlatformException.
+    try {
+      result = await _connectivity.checkConnectivity();
+    } on PlatformException catch (e) {
+      log('Couldn\'t check connectivity status', error: e);
+      return;
+    }
+
+    // If the widget was removed from the tree while the asynchronous platform
+    // message was in flight, we want to discard the reply rather than calling
+    // setState to update our non-existent appearance.
+    if (!mounted) {
+      return Future.value(null);
+    }
+
+    return _updateConnectionStatus(result);
+  }
+
+  Future<void> _updateConnectionStatus(List<ConnectivityResult> result) async {
+    final response = result.first != ConnectivityResult.none;
+    _valueIsDevice.value = response;
+    log('Connectivity changed: $response');
   }
 
   @override
@@ -41,24 +76,24 @@ class _InternetConnectionWidgetState extends State<InternetConnectionWidget> {
     return Stack(
       children: [
         widget.child,
-        StreamBuilder<bool>(
-          stream: streamController.stream,
-          builder: (context, snapshot) {
+        ValueListenableBuilder<bool>(
+          valueListenable: _valueIsDevice,
+          builder: (BuildContext context, bool value, Widget? child) {
             return Visibility(
-              visible: !isDeviceConnected,
+              visible: !value,
               child: SafeArea(
                 child: Container(
                   alignment: Alignment.center,
                   width: double.maxFinite,
                   color: ProTiendasUiColors.aeroBlue,
-                  height: !isDeviceConnected ? 16.0 : 0.0,
+                  height: !value ? 16.0 : 0.0,
                   child: XigoTextMedium(
-                    BreedUiValues.noConection,
+                    widget.text,
                   ),
                 ),
               ),
             );
-          }
+          },
         ),
       ],
     );
