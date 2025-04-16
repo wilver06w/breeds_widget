@@ -19,7 +19,9 @@ dependencies:
   gap: ^3.0.1
   google_fonts: ^6.1.0
   internet_connection_checker: ^1.0.0+1
-  connectivity_plus: ^5.0.1
+
+  connectivity_plus: ^6.1.2
+  # connectivity_plus: ^5.0.1
   # l10n_breeds:
   #   path: ../l10n_breeds
   # utils_breeds:
